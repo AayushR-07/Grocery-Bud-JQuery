@@ -15,5 +15,20 @@ function createSingleItem(item) {
     </button>
   `);
 
+  // Checkbox toggle
+  $div.find('input[type="checkbox"]').on("change", function () {
+    editCompleted(item.id);
+  });
+
+  // Remove button
+  $div.find(".remove-btn").on("click", function () {
+    removeItem(item.id);
+  });
+
+  // Edit button
+  $div.find(".edit-btn").on("click", function () {
+    setEditId(item.id);
+  });
+
   return $div;
 }
