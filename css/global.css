@@ -1,25 +1,127 @@
+:root {
+  --primary: #10b981;   /* emerald */
+  --primary-dark: #059669;
+
+  --accent: #6366f1;    /* indigo */
+  --accent-dark: #4f46e5;
+
+  --danger: #ef4444;
+  --danger-dark: #dc2626;
+
+  --bg-card: #f9fafb;
+  --bg-item: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #6b7280;
+
+  --border-soft: #e5e7eb;
+}
+
+
 *,
 ::after,
 ::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #0f172a;
+}
+
+
+
+
 body {
-  background: #eee;
+  min-height: 100vh;
   font-family: Helvetica, sans-serif;
-  font-weight: 400;
-  line-height: 1.2;
-  color: #222;
+
+  /* background image */
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("../images/background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .section-center {
-  margin: 0 auto;
-  margin-top: 8rem;
-  max-width: 30rem;
-  background: #fff;
-  border-radius: 0.25rem;
-  padding: 2rem;
-  position: relative;
+  width: 100%;
+  max-width: 36rem;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(245, 247, 250, 0.9)
+  );
+
+  padding: 2.75rem 3rem;
+  border-radius: 1.25rem;
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  animation: fadeIn 0.6s ease;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #43a047;
 }
